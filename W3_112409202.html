@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <style>
+        table, th, td { /*CSS放<head>當中。 <th>的字體會自動加粗。*/
+            border: 1px solid black;
+            border-collapse: collapse;
+            /* (預設) : 每個儲存格都有獨立邊框，中間有間隙、border-collapse(合併) : 相鄰的邊框會併在一起，變成一條細線。  */
+        }
+        
+        th, td{
+            text-align: left;
+            padding: 5px;  /* 在文字四周離邊框留出 5px 空白。*/
+        }
+    </style>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Student ID</th>
+        </tr>
+
+        <tr>
+            <td>鍾主悅</td>
+            <td>112409202</td>
+        </tr>
+    </table>
+</body>
+</html>
