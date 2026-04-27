@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    
+    img{
+        height: 300px;
+    }
+
+    .img-left{
+        width: 33%;
+        border-radius: 18px;
+        
+        /* 圖片保持比例No distortion*/object-fit: cover;
+    }
+
+    .img-center{
+        width: 150px;
+        border: 1px solid black;
+        padding: 2px;
+
+        height: 150px; /* 變成正圓 */
+        border-radius: 50%; /* 變成圓形 */
+        object-fit:cover;
+        /* 調整下內距使圖片往上 */margin-bottom: 140px;
+    }
+
+    .img-right{
+        width: 33%;
+
+        /* (預設)圖片填滿，可能變形distortion*/object-fit: fill;
+    }
+
+    /*圓形要靠上*/
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        padding: 20px;
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <img src="https://preview.redd.it/super-duolingo-wallpaper-v0-tnrkhyk9if691.jpg?width=640&crop=smart&auto=webp&s=51b2b1fc5f8eb4d447633538c0378d692d7d22db" class="img-left" alt="left">
+        <img src="https://play-lh.googleusercontent.com/DsyWoouXk7psjF7DCG6MJj_rX9RR9-liQskZXoKvcqQIu_ybUm4F5RntxWh1IZAVSLI" class="img-center" alt=""center>
+        <img src="https://preview.redd.it/super-duolingo-wallpaper-v0-tnrkhyk9if691.jpg?width=640&crop=smart&auto=webp&s=51b2b1fc5f8eb4d447633538c0378d692d7d22db" class="img-right" alt="right">
+    </div>
+</body>
+</html>

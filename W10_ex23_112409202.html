@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+    /* 
+    第一 : 灰色抬頭Bar 在網頁的正中間。
+    第二 : 橘色區塊 在網頁的正中間
+    第三 : 貓頭鷹圖片 在橘色區塊的正中間
+    按鈕文字被換行了。要解決
+    */
+
+    body{
+        font-family: Roboto;
+        font-size: 13px;
+        background-color: #ffff;
+        align-items: center; /* 所有內容在網頁水平置中 */
+    }
+
+    .container1{
+        width:496px;
+        height: 35px;
+        background: #d5d5d7;
+        padding-left: 15px;
+        padding-right: 22px;
+        padding-bottom: 1px;
+
+        display: flex;  /*  預覽和詳細資訊可以在同一行  */
+        /* flex用的水平置中 */justify-self: center;
+        /* flex用的垂直置中 */align-items: center;
+    }
+
+    .title-bar{
+        width:496px;
+        height: 35px;
+        text-decoration-color: #707070;
+        padding-left: 15px;
+        padding-right: 22px;
+
+        /* 若此區放了圖片&按鈕能一起置中: 啟動Flex布局。 */
+        display: flex;
+        /* flex用的垂直置中 */align-items: center; 
+    }   
+
+    .container2{
+        background-color:bisque;
+        width: 450px;
+        height: 240px;
+
+        /* 最傳統的水平置中:區塊水平置中法display block，把區塊設定為block，再讓block被置中。
+        display: block;
+        然後設定外元素距離margin == 0。
+        block和文字一樣能被設定置中(把圖片設計成block，就能讓圖片和文字使用的置中法一樣text-align: center;)
+         */
+        display: block;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    button{
+        height:22px;
+        border-radius: 8px;
+        /* (X) padding: 15px; 高度22又設定上下內距15，所以按鈕文字才會溢出來。*/
+        background-color: #ffff;
+
+        /* 只設定左右padding。 */ padding: 0 18px;
+        line-height: 20px; /* 將單行的行高設定成跟容器高度height差不多*/
+
+        /* 解決文字換行問題 1.寬度不夠、2.強制文字不准換行。*/
+        width: auto;
+        white-space: nowrap;
+        
+        /* 設計button border寬寬顏色寬度用border: 1px solid black;*/
+        border: 1px solid black;
+    }
+
+    .info{
+        display: none;
+        margin: 10px auto;
+        width: 496px; /* 保持一致寬度 */
+    }
+
+    p{
+        margin-top: 0;
+        margin-bottom: 6px;
+        /*上下間距先歸零，然後統一設定下方間距6px */
+    }
+        
+    img {
+        height: 240px;
+        width: auto;
+    }
+
+</style>
+</head>
+
+<body>
+
+    <div class="container1">
+        <div class="title-bar">預覽</div>
+        <button onclick="showInfo()">詳細資訊</button>
+    </div>
+
+    <div class="container2">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOfDZN-PXr_gemtvSzhBGmB8TSZilupdh9Aw&s" alt="Duo";>
+    </div>
+
+    <div id="detailInfo" class="info">
+        <p>修改日期：2017/10/12</p>
+        <p>類型：JPG</p>
+        <p>大小：466.97KB</p>
+        <p>路徑 : https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOfDZN-PXr_gemtvSzhBGmB8TSZilupdh9Aw&s" alt="Duo";></p>
+    </div>
+
+    <script>
+        function showInfo() {
+            var info = document.getElementById("detailInfo");
+
+            if (info.style.display === "none" || info.style.display === "") {
+                info.style.display = "block";
+            } else {
+                info.style.display = "none";
+            }
+        }
+    </script>
+
+</body>
+</html>
