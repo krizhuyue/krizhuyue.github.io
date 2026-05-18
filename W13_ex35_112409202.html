@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+
+<body>
+    <h2>Original object properties 物件中原本有的屬性:</h2>
+    <p id="demo1"></p>
+    <h2>Object after deleting the age property 刪除age屬性:</h2>
+    <p id="demo2"></p>
+
+    <script>
+    var Person={
+        firstName:"Tony",
+        lastName:"Lee",
+        age: 50,
+        eyeColor:"Blue"
+    };
+
+    let text="";    // 建立變數 text
+    for(let i in Person){ // for loop 列出Person object 裡面存到的所有屬性properties 和屬性中存的那個值。
+        text += i + ":" + Person[i]+"<br>";
+        //
+    }
+    
+    document.getElementById("demo1").innerHTML = text;// 顯示出來用 innerHTML。
+    
+    delete Person.age;      //把age property 從Person object 中刪除，之後Person 物件只剩下 firstName、lastName、eyeColor。 
+
+    let text2="";
+    for(let i in Person){
+        text2 += i +":"+Person[i]+"<br>";
+    }
+    document.getElementById("demo2").innerHTML = text2;
+    </script>
+</body>
+</html>
