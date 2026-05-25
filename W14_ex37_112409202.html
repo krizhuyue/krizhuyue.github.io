@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+
+<body>
+    <p>112409202 鍾主悅</p>
+    <h2>Circle Calculator</h2>
+
+    Radius:
+    <input type="number" id="radius">
+    <button onclick="calculate()">Calculate!</button>
+
+    <!--以輸入的半徑計算circumference 輸出"The circumfernce is__-->
+    <p id="circumference"></p>
+    <p id="area"></p>
+
+<script>
+function calcCircumference(radius){
+    let circumference = 2* Math.PI * radius;
+        
+    //輸出結果在網頁上 : Element在這是指? Id的元素 id是circumference，元素是 2* Math.PI * radius
+    document.getElementById("circumference").innerHTML = "The circumference is "+ circumference.toFixed(2);
+}
+
+function calcArea(radius){
+    let area = Math.PI * radius * radius;
+    document.getElementById("area").innerHTML = "The area is "+ area.toFixed(2);
+}
+
+function calculate(){   //接網頁輸入的字串 -> 轉radius為數字 -> 依序叫上面兩段方法式計算出結果。
+    // 不以字串讀取輸入(document.getE...)。改成將radius轉化成數字讀取。
+    let r = Number(document.getElementById("radius").value);
+    calcCircumference(r);
+    calcArea(r);
+}
+</script>
+</body>
+</html>
